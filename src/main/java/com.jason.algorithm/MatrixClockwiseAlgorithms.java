@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * @author JasonLu
  */
-public class MatrixClockwiseOutput {
+public class MatrixClockwiseAlgorithms {
 
     private ArrayList<Integer> printMatrix(int[][] matrix) {
         // 矩阵行数
@@ -60,9 +60,9 @@ public class MatrixClockwiseOutput {
                         {9, 10, 11, 12},
                         {13, 14, 15, 16}
                 };
-        MatrixClockwiseOutput matrixClockwiseOutput = new MatrixClockwiseOutput();
+        MatrixClockwiseAlgorithms matrixClockwiseAlgorithms = new MatrixClockwiseAlgorithms();
         ArrayList<Integer> printList;
-        printList = matrixClockwiseOutput.printMatrix(matrix);
+        printList = matrixClockwiseAlgorithms.printMatrix(matrix);
         for (Integer integer : printList) {
             System.out.print(integer + "\0");
         }
