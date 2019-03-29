@@ -10,6 +10,7 @@ public class MyStack<T> {
 
     //始终指向栈顶的元素
     private MyNode top;
+    private int maxSize = 8;
     //元素的个数
     private int size;
 
@@ -18,12 +19,15 @@ public class MyStack<T> {
      *
      * @param data
      */
-    public void push(T data) {
+    public void push(T data) throws Exception {
         //next指向当前元素的top，如果是第一个元素next指向null
         MyNode node = new MyNode(data, top);
         //当前的元素指向top
         top = node;
         size++;
+        if(size > maxSize){
+            throw new Exception("overflow");
+        }
     }
 
     /**
@@ -31,7 +35,10 @@ public class MyStack<T> {
      *
      * @return
      */
-    public T pop() {
+    public T pop() throws Exception {
+        if(null == top){
+            throw new Exception("underflow");
+        }
         MyNode oldNode = top;
         top = top.next;
         oldNode.next = null;
